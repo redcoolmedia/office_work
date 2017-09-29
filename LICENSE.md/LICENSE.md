@@ -1,4 +1,4 @@
-OffiWork is GPL v3.0.
+OfficeWork is GPL v3.0.
 
 OfficeWork is an optimization of the provisioning between owncloud and onlyoffice community edition. 
 
