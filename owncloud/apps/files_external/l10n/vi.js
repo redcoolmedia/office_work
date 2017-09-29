@@ -1,0 +1,26 @@
+OC.L10N.register(
+    "files_external",
+    {
+    "External storage" : "Lưu trữ ngoài",
+    "Personal" : "Cá nhân",
+    "Grant access" : "Cấp quyền truy cập",
+    "Saved" : "Đã lưu",
+    "Username" : "Tên đăng nhập",
+    "Password" : "Mật khẩu",
+    "Save" : "Lưu",
+    "Port" : "Cổng",
+    "Region" : "Vùng/miền",
+    "WebDAV" : "WebDAV",
+    "URL" : "URL",
+    "Location" : "Vị trí",
+    "ownCloud" : "ownCloud",
+    "Host" : "Máy chủ",
+    "Share" : "Chia sẻ",
+    "Name" : "Tên",
+    "External Storage" : "Lưu trữ ngoài",
+    "Folder name" : "Tên thư mục",
+    "Configuration" : "Cấu hình",
+    "Add storage" : "Thêm bộ nhớ",
+    "Delete" : "Xóa"
+},
+"nplurals=1; plural=0;");

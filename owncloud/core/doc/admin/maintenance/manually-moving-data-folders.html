@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How To Manually Move a Data Directory &mdash; ownCloud 10.0 Server Administration Manual 10.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/main.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '10.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="ownCloud 10.0 Server Administration Manual 10.0 documentation" href="../contents.html" />
+    <link rel="up" title="Maintenance" href="index.html" />
+    <link rel="next" title="Mimetypes Management" href="../configuration_mimetypes/index.html" />
+    <link rel="prev" title="Migrating to a Different Server" href="migrating.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1d2d44">
+
+  </head>
+  <body role="document">
+
+
+<div class="wrap container not-front">
+  <div class="content row">
+  <main class="main">
+    <div class="row page-content-header">
+      <div class="col-md-5 col-md-offset-7">
+      
+        <form class="headersearch" style="margin-bottom:-3px;" action="../search.html" method="get">
+        <input type="text" value="" name="q" id="q" class="form-control" /> 
+        <button  class="btn btn-default" type="submit" id="searchsubmit">Search</button>
+        </form>
+      
+      </div>
+    </div>
+    
+			<div class="row">
+				<div class="col-md-3">
+					<div class="sidebar">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										
+<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new_admin.html">What&#8217;s New in ownCloud 10.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_database/index.html">Database Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_files/index.html">File Sharing and Management</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Maintenance</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="enable_maintenance.html">Maintenance Mode Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup.html">Backing up ownCloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrade.html">How to Upgrade Your ownCloud Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="package_upgrade.html">Upgrade ownCloud From Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update.html">Upgrading ownCloud with the Updater App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_upgrade.html">Manual ownCloud Upgrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restore.html">Restoring ownCloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrating.html">Migrating to a Different Server</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">How To Manually Move a Data Directory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fix-hardcoded-database-path-variables">Fix Hardcoded Database Path Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fix-application-settings">Fix Application Settings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_mimetypes/index.html">Mimetypes Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_server/index.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_user/index.html">User Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues and Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enterprise/index.html">Enterprise Features</a></li>
+</ul>
+
+								</ul>
+							</div>
+					</div>
+				</div>
+        
+
+				<div class="col-md-9">
+					<div class="page-content">
+            
+<ul class="prevnext-title list-unstyled list-inline">
+  <li class="prev">
+    <a href="migrating.html" title="Previous Chapter: Migrating to a Different Server"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Migrating to ...</span>
+    </a>
+  </li>
+  <li class="next">
+    <a href="../configuration_mimetypes/index.html" title="Next Chapter: Mimetypes Management"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Mimetypes Man... &raquo;</span>
+    </a>
+  </li>
+</ul>
+						
+  <div class="section" id="how-to-manually-move-a-data-directory">
+<h1>How To Manually Move a Data Directory<a class="headerlink" href="#how-to-manually-move-a-data-directory" title="Permalink to this headline">¶</a></h1>
+<p id="datadir-move-label">If you need to move your ownCloud data directory from its current location to
+somewhere else, here is a manual process that you can take to make it happen.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This example assumes that:</p>
+<ul class="last simple">
+<li>The current folder is: <cite>/var/www/owncloud/data</cite></li>
+<li>The new folder is: <cite>/mnt/owncloud</cite></li>
+<li>You&#8217;re using Apache as your webserver</li>
+</ul>
+</div>
+<ol class="arabic simple">
+<li>Stop Apache</li>
+<li>Use rsync to sync the files from the current folder to the new one</li>
+<li>Create a symbolic link from the new directory to the old one</li>
+<li>Double-check <a class="reference external" href="https://doc.owncloud.org/server/9.1/admin_manual/installation/installation_wizard.html#strong-perms-label">the directory permissions</a> on the new directory</li>
+<li>Restart Apache</li>
+</ol>
+<p>To save time, here&#8217;s the commands which you can copy and use:</p>
+<div class="highlight-python"><div class="highlight"><pre>apachectl -k stop
+rsync -avz /var/www/owncloud/data /mnt/owncloud
+ln -s /mnt/owncloud /www/owncloud/data
+apachectl -k graceful
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you&#8217;re on CentOS/Fedora, try <code class="docutils literal"><span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">httpd</span></code>.
+If you&#8217;re on Debian/Ubuntu try <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">apache2</span></code>
+To learn more about the systemctl command, please refer to <a class="reference external" href="https://www.digitalocean.com/community/tutorials/systemd-essentials-working-with-services-units-and-the-journal">the systemd essentials guide</a></p>
+</div>
+<div class="section" id="fix-hardcoded-database-path-variables">
+<h2>Fix Hardcoded Database Path Variables<a class="headerlink" href="#fix-hardcoded-database-path-variables" title="Permalink to this headline">¶</a></h2>
+<p>If you want to manually change the location of the data folder in the database,
+run the SQL below:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">UPDATE</span> <span class="n">oc_storages</span> <span class="k">SET</span> <span class="n">id</span><span class="o">=</span><span class="s1">&#39;local::/mnt/owncloud&#39;</span>
+  <span class="k">WHERE</span> <span class="n">id</span><span class="o">=</span><span class="s1">&#39;local::/var/www/owncloud/data&#39;</span>
+</pre></div>
+</div>
+<p>The other area to check is the <cite>oc_jobs</cite> table. The logrotate process may have
+hard-coded a non-standard (or old) value for the data path. To check it, run the
+SQL below and see if any results are returned:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">oc_jobs</span> <span class="k">WHERE</span> <span class="k">class</span> <span class="o">=</span> <span class="s1">&#39;OC\Log\Rotate&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If any are, run the SQL below to update them, changing the value as appropriate.</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">UPDATE</span> <span class="n">oc_jobs</span> <span class="k">SET</span> <span class="n">argument</span> <span class="o">=</span> <span class="s1">&#39;/your/new/data/path&#39;</span>
+  <span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">id</span> <span class="k">of</span> <span class="n">the</span> <span class="n">incorrect</span> <span class="n">record</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fix-application-settings">
+<h2>Fix Application Settings<a class="headerlink" href="#fix-application-settings" title="Permalink to this headline">¶</a></h2>
+<p>One thing worth noting is that individual apps may reference the data directory
+separate from the core system configuration. If so, then you will need to find
+which applications do this, and change them as needed.</p>
+<p>For example, if you listed the application configuration by running <cite>occ
+config:list</cite>, then you might see output similar to that below:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nt">&quot;apps&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;fictitious&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="s2">&quot;yes&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;installed_version&quot;</span><span class="p">:</span> <span class="s2">&quot;2.3.2&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;types&quot;</span><span class="p">:</span> <span class="s2">&quot;filesystem&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;datadir&quot;</span><span class="p">:</span> <span class="s2">&quot;var/www/owncloud/data&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here, the &#8220;fictitious&#8221; application references the data directory as being set to
+<cite>var/www/owncloud/data</cite>. So you would have to change the value by using the
+<cite>config:app:set</cite> option. Here&#8217;s an example of how you would update the setting:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">occ config:app:set --value /mnt/owncloud fictitious datadir</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            
+<ul class="prevnext-title list-unstyled list-inline">
+  <li class="prev">
+    <a href="migrating.html" title="Previous Chapter: Migrating to a Different Server"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Migrating to ...</span>
+    </a>
+  </li>
+  <li class="next">
+    <a href="../configuration_mimetypes/index.html" title="Next Chapter: Mimetypes Management"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Mimetypes Man... &raquo;</span>
+    </a>
+  </li>
+</ul>
+					</div>
+				</div>
+			</div>
+  </main>  
+  </div>
+</div>
+  </body>
+</html>

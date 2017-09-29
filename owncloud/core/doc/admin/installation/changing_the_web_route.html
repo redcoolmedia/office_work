@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Changing Your ownCloud URL &mdash; ownCloud 10.0 Server Administration Manual 10.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/main.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '10.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="ownCloud 10.0 Server Administration Manual 10.0 documentation" href="../contents.html" />
+    <link rel="up" title="Installation" href="index.html" />
+    <link rel="next" title="Installing and Managing Apps" href="apps_management_installation.html" />
+    <link rel="prev" title="Installing ownCloud from the Command Line" href="command_line_installation.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1d2d44">
+
+  </head>
+  <body role="document">
+
+
+<div class="wrap container not-front">
+  <div class="content row">
+  <main class="main">
+    <div class="row page-content-header">
+      <div class="col-md-5 col-md-offset-7">
+      
+        <form class="headersearch" style="margin-bottom:-3px;" action="../search.html" method="get">
+        <input type="text" value="" name="q" id="q" class="form-control" /> 
+        <button  class="btn btn-default" type="submit" id="searchsubmit">Search</button>
+        </form>
+      
+      </div>
+    </div>
+    
+			<div class="row">
+				<div class="col-md-3">
+					<div class="sidebar">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										
+<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new_admin.html">What&#8217;s New in ownCloud 10.0</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="system_requirements.html">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_recommendations.html">ownCloud Deployment Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux_installation.html">Preferred Linux Installation Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_wizard.html">Installation Wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command_line_installation.html">Installing ownCloud from the Command Line</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Changing Your ownCloud URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps_management_installation.html">Installing and Managing Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps_supported.html">Supported Apps in ownCloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source_installation.html">Manual Installation on Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_installation.html">ownCloud Community Appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selinux_configuration.html">SELinux Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nginx_examples.html">NGINX Example Configurations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_database/index.html">Database Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_files/index.html">File Sharing and Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_mimetypes/index.html">Mimetypes Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_server/index.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_user/index.html">User Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues and Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enterprise/index.html">Enterprise Features</a></li>
+</ul>
+
+								</ul>
+							</div>
+					</div>
+				</div>
+        
+
+				<div class="col-md-9">
+					<div class="page-content">
+            
+<ul class="prevnext-title list-unstyled list-inline">
+  <li class="prev">
+    <a href="command_line_installation.html" title="Previous Chapter: Installing ownCloud from the Command Line"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Installing ow...</span>
+    </a>
+  </li>
+  <li class="next">
+    <a href="apps_management_installation.html" title="Next Chapter: Installing and Managing Apps"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Installing an... &raquo;</span>
+    </a>
+  </li>
+</ul>
+						
+  <div class="section" id="changing-your-owncloud-url">
+<h1>Changing Your ownCloud URL<a class="headerlink" href="#changing-your-owncloud-url" title="Permalink to this headline">¶</a></h1>
+<p>This admin manual assumes that the ownCloud server is already accessible under the Web route
+<code class="docutils literal"><span class="pre">/owncloud</span></code>, which is the default at installation, e.g. <code class="docutils literal"><span class="pre">https://example.com/owncloud</span></code>. You can change this in your Web server configuration, for example from <code class="docutils literal"><span class="pre">https://example.com/owncloud/</span></code> to <code class="docutils literal"><span class="pre">https://example.com/</span></code>.</p>
+<p>On Debian/Ubuntu Linux edit these files:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">/etc/apache2/sites-enabled/owncloud.conf</span></code></li>
+<li><code class="docutils literal"><span class="pre">/var/www/owncloud/config/config.php</span></code></li>
+</ul>
+<p>Edit the <code class="docutils literal"><span class="pre">Alias</span></code> in <code class="docutils literal"><span class="pre">/etc/apache2/sites-enabled/owncloud.conf</span></code> to alias your ownCloud directory to the Web server root:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Alias</span> <span class="o">/</span> <span class="s2">&quot;/var/www/owncloud/&quot;</span>
+</pre></div>
+</div>
+<p>Edit the <code class="docutils literal"><span class="pre">overwrite.cli.url</span></code> parameter in <code class="docutils literal"><span class="pre">/var/www/owncloud/config/config.php</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>&#39;overwrite.cli.url&#39; =&gt; &#39;http://localhost/&#39;,
+</pre></div>
+</div>
+<p>Restart Apache, and now you can access ownCloud from either <code class="docutils literal"><span class="pre">https://example.com/</span></code> or <code class="docutils literal"><span class="pre">https://localhost/</span></code>. Note that you will not be able to run any other virtual hosts, as ownCloud is aliased to your Web root.</p>
+<p>On CentOS/Fedora/Red Hat, edit <code class="docutils literal"><span class="pre">/etc/httpd/conf.d/owncloud.conf</span></code> and <code class="docutils literal"><span class="pre">/var/www/html/owncloud/config/config.php</span></code>, then restart Apache.</p>
+</div>
+
+
+            
+<ul class="prevnext-title list-unstyled list-inline">
+  <li class="prev">
+    <a href="command_line_installation.html" title="Previous Chapter: Installing ownCloud from the Command Line"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Installing ow...</span>
+    </a>
+  </li>
+  <li class="next">
+    <a href="apps_management_installation.html" title="Next Chapter: Installing and Managing Apps"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Installing an... &raquo;</span>
+    </a>
+  </li>
+</ul>
+					</div>
+				</div>
+			</div>
+  </main>  
+  </div>
+</div>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Troubleshooting &mdash; ownCloud 10.0 User Manual 10.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/main.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '10.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="ownCloud 10.0 User Manual 10.0 documentation" href="../contents.html" />
+    <link rel="up" title="Files &amp; Synchronization" href="index.html" />
+    <link rel="next" title="Using Federation Shares" href="federated_cloud_sharing.html" />
+    <link rel="prev" title="Storage Quota" href="quota.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1d2d44">
+
+  </head>
+  <body role="document">
+
+
+<div class="wrap container not-front">
+  <div class="content row">
+  <main class="main">
+    <div class="row page-content-header">
+      <div class="col-md-5 col-md-offset-7">
+      
+        <form class="headersearch" style="margin-bottom:-3px;" action="../search.html" method="get">
+        <input type="text" value="" name="q" id="q" class="form-control" /> 
+        <button  class="btn btn-default" type="submit" id="searchsubmit">Search</button>
+        </form>
+      
+      </div>
+    </div>
+    
+			<div class="row">
+				<div class="col-md-3">
+					<div class="sidebar">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										
+<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">What&#8217;s New in ownCloud 10.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pim/index.html">Contacts &amp; Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documents.html">Collaborative Document Editing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_storage/index.html">External Storage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Files &amp; Synchronization</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="access_webdav.html">Accessing ownCloud Files Using WebDAV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_webgui.html">Accessing your Files Using the ownCloud Web Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="desktop_mobile_sync.html">Desktop and Mobile Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encrypting_files.html">Encrypting Your ownCloud Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gallery_app.html">Gallery App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deleted_file_management.html">Managing Deleted Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_drop.html">Making Anonymous Uploads (Enterprise Only)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="large_file_upload.html">Large File Uploads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quota.html">Storage Quota</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#error-messages">Error Messages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="federated_cloud_sharing.html">Using Federation Shares</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version_control.html">Version Control</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../session_management.html">Manage Connected Browsers and Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinterface.html">The Web Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userpreferences.html">Setting Your Preferences</a></li>
+</ul>
+
+								</ul>
+							</div>
+					</div>
+				</div>
+        
+
+				<div class="col-md-9">
+					<div class="page-content">
+            
+<ul class="prevnext-title list-unstyled list-inline">
+  <li class="prev">
+    <a href="quota.html" title="Previous Chapter: Storage Quota"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Storage Quota</span>
+    </a>
+  </li>
+  <li class="next">
+    <a href="federated_cloud_sharing.html" title="Next Chapter: Using Federation Shares"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Using Federat... &raquo;</span>
+    </a>
+  </li>
+</ul>
+						
+  <div class="section" id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="error-messages">
+<h2>Error Messages<a class="headerlink" href="#error-messages" title="Permalink to this headline">¶</a></h2>
+<p>Listed here are the most common errors you may encounter while attempting to
+upload files, along with what they mean, and possible workarounds.</p>
+<div class="section" id="error-while-copying-file-to-target-location-copied-bytes-xxx-expected-filesize-yyy">
+<h3>Error while copying file to target location (copied bytes: xxx, expected filesize: yyy)<a class="headerlink" href="#error-while-copying-file-to-target-location-copied-bytes-xxx-expected-filesize-yyy" title="Permalink to this headline">¶</a></h3>
+<p>This error is most likely due to an issue with the target storage location.
+During file uploads the file data is read from PHP input and copied into a part
+file on the target storage.
+If the target storage is not local (eg: FTP) and that storage is slow, not
+available, or broken it is likely that the operation will fail either at the
+beginning, or in the middle of the copy.
+Other reasons for this message can be that, when writing to external storage,
+the connection took too long to respond or the network connection was flaky.</p>
+</div>
+<div class="section" id="sharing-sidebar-does-not-show-shared-with-you-by-for-remote-shares">
+<h3>Sharing sidebar does not show &#8220;Shared with you by ...&#8221; for remote shares<a class="headerlink" href="#sharing-sidebar-does-not-show-shared-with-you-by-for-remote-shares" title="Permalink to this headline">¶</a></h3>
+<p>In some scenarios, when users share folders and files with each other they cannot be scanned.
+There are a variety of reasons why this happens, which can include firewalls and broken servers.
+In these situations, when the initial scan did not complete successfully, the mount point cannot appear in the ownCloud web UI.
+This is because ownCloud was not able to generate a matching file cache entry, nor retrieve any metadata about whether it&#8217;s a folder or file (mime type), etc.</p>
+</div>
+</div>
+</div>
+
+
+            
+<ul class="prevnext-title list-unstyled list-inline">
+  <li class="prev">
+    <a href="quota.html" title="Previous Chapter: Storage Quota"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Storage Quota</span>
+    </a>
+  </li>
+  <li class="next">
+    <a href="federated_cloud_sharing.html" title="Next Chapter: Using Federation Shares"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Using Federat... &raquo;</span>
+    </a>
+  </li>
+</ul>
+					</div>
+				</div>
+			</div>
+  </main>  
+  </div>
+</div>
+  </body>
+</html>

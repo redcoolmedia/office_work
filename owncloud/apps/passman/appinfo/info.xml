@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<info>
+    <id>passman</id>
+    <name>Passman</name>
+    <summary>Passman is a full featured password manager.</summary>
+    <description><![CDATA[Passman is a full featured password manager.
+Features:
+- Vaults
+- Vault key is never sent to the server
+- Credentials are client side encrypted with 256bit AES
+- Credentials are server side encrypted with 256bit AES
+- Ability to add custom fields to credentials
+- Built-in OTP (One Time Password) generator
+- Password analyzer
+- Share passwords internally and via link in a secure manner.
+- Import from various password managers (KeePass, LastPass, DashLane, ZOHO, Clipperz.is )
+For an demo of this app visit [https://demo.passman.cc](https://demo.passman.cc)
+]]></description>
+
+    <licence>AGPL</licence>
+    <version>2.1.0</version>
+    <author homepage="https://github.com/brantje">Sander Brand</author>
+    <author homepage="https://github.com/animalillo">Marcos Zuriaga</author>
+    <namespace>Passman</namespace>
+    <documentation>
+        <admin>https://github.com/nextcloud/passman#readme</admin>
+        <developer>https://github.com/nextcloud/passman/tree/master/docs</developer>
+    </documentation>
+    <category>tools</category>
+    <website>https://demo.passman.cc</website>
+    <bugs>https://github.com/nextcloud/passman/issues</bugs>
+    <repository type="git">https://github.com/nextcloud/passman.git</repository>
+    <screenshot small-thumbnail="https://img.passman.cc/thumbs/overview.png">https://img.passman.cc/overview.png</screenshot>
+    <screenshot small-thumbnail="https://img.passman.cc/thumbs/edit_credential.png">https://img.passman.cc/edit_credential.png</screenshot>
+    <screenshot small-thumbnail="https://img.passman.cc/thumbs/share_credential.png">https://img.passman.cc/share_credential.png</screenshot>
+    <screenshot small-thumbnail="https://img.passman.cc/thumbs/password_audit.png">https://img.passman.cc/password_audit.png</screenshot>
+    <dependencies>
+        <php min-version="5.6"/>
+        <owncloud min-version="9" max-version="11" />
+        <nextcloud min-version="9" max-version="12" />
+        <database>sqlite</database>
+        <database min-version="5.5">mysql</database>
+        <lib>openssl</lib>
+    </dependencies>
+
+    <repair-steps>
+        <post-migration>
+            <step>OCA\Passman\Migration\ServerSideEncryption</step>
+        </post-migration>
+    </repair-steps>
+
+    <background-jobs>
+        <job>OCA\Passman\BackgroundJob\ExpireCredentials</job>
+    </background-jobs>
+</info>

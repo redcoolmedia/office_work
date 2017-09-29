@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Excluding Directories and Blacklisting Files &mdash; ownCloud 10.0 Server Administration Manual 10.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/main.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '10.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="ownCloud 10.0 Server Administration Manual 10.0 documentation" href="../contents.html" />
+    <link rel="up" title="Server Configuration" href="index.html" />
+    <link rel="next" title="Linking External Sites" href="external_sites.html" />
+    <link rel="prev" title="Email Configuration" href="email_configuration.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1d2d44">
+
+  </head>
+  <body role="document">
+
+
+<div class="wrap container not-front">
+  <div class="content row">
+  <main class="main">
+    <div class="row page-content-header">
+      <div class="col-md-5 col-md-offset-7">
+      
+        <form class="headersearch" style="margin-bottom:-3px;" action="../search.html" method="get">
+        <input type="text" value="" name="q" id="q" class="form-control" /> 
+        <button  class="btn btn-default" type="submit" id="searchsubmit">Search</button>
+        </form>
+      
+      </div>
+    </div>
+    
+			<div class="row">
+				<div class="col-md-3">
+					<div class="sidebar">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										
+<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new_admin.html">What&#8217;s New in ownCloud 10.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_database/index.html">Database Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_files/index.html">File Sharing and Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_mimetypes/index.html">Mimetypes Management</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Server Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="security_setup_warnings.html">Warnings on Admin Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import_ssl_cert.html">Importing System-wide and Personal SSL Certificates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="occ_command.html">Using the occ Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activity_configuration.html">Configuring the Activity App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="antivirus_configuration.html">Virus Scanner Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching_configuration.html">Configuring Memory Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background_jobs_configuration.html">Background Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_sample_php_parameters.html">Config.php Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_configuration.html">Email Configuration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Excluding Directories and Blacklisting Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#definitions-of-terms">Definitions of terms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#impact-on-system-performance">Impact on System Performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blacklisted-files">Blacklisted Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#excluded-directories">Excluded Directories</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="external_sites.html">Linking External Sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_client_repos.html">Custom Client Download Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knowledgebase_configuration.html">Knowledge Base Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language_configuration.html">Language Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging_configuration.html">Logging Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="harden_server.html">Hardening and Security Guidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverse_proxy_configuration.html">Reverse Proxy Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thirdparty_php_configuration.html">Using Third Party PHP Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="js_css_asset_management_configuration.html">JavaScript and CSS Asset Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automatic_configuration.html">Automatic Configuration Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oc_server_tuning.html">ownCloud Server Tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_php_less_urls.html">Enable index.php-less URLs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_user/index.html">User Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues and Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enterprise/index.html">Enterprise Features</a></li>
+</ul>
+
+								</ul>
+							</div>
+					</div>
+				</div>
+        
+
+				<div class="col-md-9">
+					<div class="page-content">
+            
+<ul class="prevnext-title list-unstyled list-inline">
+  <li class="prev">
+    <a href="email_configuration.html" title="Previous Chapter: Email Configuration"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Email Configu...</span>
+    </a>
+  </li>
+  <li class="next">
+    <a href="external_sites.html" title="Next Chapter: Linking External Sites"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Linking Exter... &raquo;</span>
+    </a>
+  </li>
+</ul>
+						
+  <div class="section" id="excluding-directories-and-blacklisting-files">
+<h1>Excluding Directories and Blacklisting Files<a class="headerlink" href="#excluding-directories-and-blacklisting-files" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="definitions-of-terms">
+<h2>Definitions of terms<a class="headerlink" href="#definitions-of-terms" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name"><strong>Blacklisted</strong>:</th><td class="field-body">Files that may harm the ownCloud environment like a foreign <code class="docutils literal"><span class="pre">.htaccess</span></code> file. Blacklisting prevents anyone from uploading blacklisted files to the ownCloud server.</td>
+</tr>
+<tr class="field-even field"><th class="field-name"><strong>Excluded</strong>:</th><td class="field-body">Existing directories on your ownCloud server, including external storage mounts, that are excluded from being processed by ownCloud. In effect they are invisible to ownCloud.</td>
+</tr>
+</tbody>
+</table>
+<p>Both types are defined in <code class="docutils literal"><span class="pre">config.php</span></code>. Blacklisted files and excluded directories are not scanned by ownCloud, not viewed, not synced, and cannot be created, renamed, deleted, or accessed via direct path input from a file explorer. Even when a filepath is entered manually via a file explorer, the path cannot be accessed.</p>
+<p>For example configurations please see <code class="docutils literal"><span class="pre">owncloud/config/config.sample.php</span></code>.</p>
+</div>
+<div class="section" id="impact-on-system-performance">
+<h2>Impact on System Performance<a class="headerlink" href="#impact-on-system-performance" title="Permalink to this headline">¶</a></h2>
+<p>If you have a filesystem mounted with 200,000 files and directories and 15 snapshots in rotation, you would now scan and process 200,000 elements plus 200,000 x 15 = 3,000,000 elements additionally. These additional 3,000,000 elements, 15 times more than the original quantity, would also be available for viewing and synchronisation. Because this is a big and unnecessary overhead, most times confusing to clients, further processing can be eliminated by using excluded directories.</p>
+</div>
+<div class="section" id="blacklisted-files">
+<h2>Blacklisted Files<a class="headerlink" href="#blacklisted-files" title="Permalink to this headline">¶</a></h2>
+<p>By default, ownCloud blacklists the file <code class="docutils literal"><span class="pre">.htaccess</span></code> to secure the running instance, which is important when using Apache as webserver. A foreign <code class="docutils literal"><span class="pre">.htaccess</span></code> file could overwrite rules defined by ownCloud. There is no explicit need to enter the file name <code class="docutils literal"><span class="pre">.htaccess</span></code> as parameter to the <code class="docutils literal"><span class="pre">blacklisted_files</span></code> array in <code class="docutils literal"><span class="pre">config.php</span></code>, but you can add more blacklisted file names if necessary.</p>
+</div>
+<div class="section" id="excluded-directories">
+<h2>Excluded Directories<a class="headerlink" href="#excluded-directories" title="Permalink to this headline">¶</a></h2>
+<p><strong>Reason for excluding directories:</strong></p>
+<ol class="arabic simple">
+<li>Enterprise storage systems, or special filesystems like ZFS and BtrFS are capable of snapshots. These snapshots are directories and keep point-in-time views of the data.</li>
+<li>Snapshot directories are read-only.</li>
+<li>There is no common naming for these directories, and most likely will never be. NetApp uses <code class="docutils literal"><span class="pre">.snapshot</span></code> and <code class="docutils literal"><span class="pre">~snapshot</span></code>, EMC eg <code class="docutils literal"><span class="pre">.ckpt</span></code>, HDS eg <code class="docutils literal"><span class="pre">.latest</span></code> and <code class="docutils literal"><span class="pre">~latest</span></code>, the ZFS filesystem uses <code class="docutils literal"><span class="pre">.zfs</span></code> and so on.</li>
+<li>Viewing and scanning of these directories does not make any sense as these directories are used to ease backup, restores, and cloning</li>
+<li>Directories which are part of the mounted filesystem, but must not be accessible via ownCloud.</li>
+</ol>
+<p><strong>Example:</strong></p>
+<p>If you have a snapshot-capable storage or filesystem where snapshots are enabled and presented to clients, each directory will contain a &#8220;special&#8221; visible directory named e.g. <code class="docutils literal"><span class="pre">.snapshot</span></code>. Depending on the system, you may find underneath a list of snapshots taken and in the next lower level the complete set of files and directories which were present when the snapshot was created. In most systems, this mechanism is true in all directory levels:</p>
+<div class="highlight-python"><div class="highlight"><pre>/.snapshot
+     /nightly.0
+             /home
+             /dat
+             /pictures
+             file_1
+             file_2
+     /nightly.1
+             /home
+             /dat
+             /pictures
+             file_1
+             file_2
+     /nightly.2
+             /home
+             /dat
+             /pictures
+             file_1
+             file_2
+     ...
+/home
+/dat
+/pictures
+file_1
+file_2
+...
+</pre></div>
+</div>
+<p>Example <code class="docutils literal"><span class="pre">excluded_directories</span></code> entries in <code class="docutils literal"><span class="pre">config.php</span></code> look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>&#39;excluded_directories&#39; =&gt;
+       array (
+               &#39;.snapshot&#39;,
+               &#39;~snapshot&#39;,
+               &#39;dir1&#39;,
+               &#39;dir2&#39;,
+       ),
+</pre></div>
+</div>
+<p>Note that these are not pathnames, but directory names without any slashes. Excluding <code class="docutils literal"><span class="pre">dir1</span></code> excludes:</p>
+<div class="highlight-python"><div class="highlight"><pre>/home/dir1
+/etc/stuff/dir1
+</pre></div>
+</div>
+<p>But not:</p>
+<div class="highlight-python"><div class="highlight"><pre>/home/.dir1
+/etc/stuff/mydir1
+</pre></div>
+</div>
+<p>Example <code class="docutils literal"><span class="pre">blacklisted_files</span></code> entries in <code class="docutils literal"><span class="pre">config.php</span></code> look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>&#39;blacklisted_files&#39; =&gt;
+       array (
+               &#39;hosts&#39;,
+               &#39;evil_script.sh&#39;,
+       ),
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            
+<ul class="prevnext-title list-unstyled list-inline">
+  <li class="prev">
+    <a href="email_configuration.html" title="Previous Chapter: Email Configuration"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Email Configu...</span>
+    </a>
+  </li>
+  <li class="next">
+    <a href="external_sites.html" title="Next Chapter: Linking External Sites"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Linking Exter... &raquo;</span>
+    </a>
+  </li>
+</ul>
+					</div>
+				</div>
+			</div>
+  </main>  
+  </div>
+</div>
+  </body>
+</html>

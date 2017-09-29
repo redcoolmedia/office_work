@@ -1,0 +1,8 @@
+<label for="details-{{ctrl.name}}">{{ctrl.meta.readableName}}</label>
+<textarea id="details-{{ctrl.name}}" name="{{ctrl.name}}"
+	ng-model="ctrl.data.value" rows="3" cols="40"
+	ng-model-options="{ debounce: 500 }" ng-change="ctrl.model.updateContact()"
+	placeholder="{{ctrl.meta.readableName}}"
+	focus-expression="$parent.ctrl.focus === ctrl.name">
+</textarea>
+<button ng-click="ctrl.deleteField()" class="icon-delete" title="{{ctrl.t.delete}}"></button>

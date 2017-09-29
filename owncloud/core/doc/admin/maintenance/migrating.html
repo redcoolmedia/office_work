@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Migrating to a Different Server &mdash; ownCloud 10.0 Server Administration Manual 10.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/main.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '10.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="ownCloud 10.0 Server Administration Manual 10.0 documentation" href="../contents.html" />
+    <link rel="up" title="Maintenance" href="index.html" />
+    <link rel="next" title="How To Manually Move a Data Directory" href="manually-moving-data-folders.html" />
+    <link rel="prev" title="Restoring ownCloud" href="restore.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1d2d44">
+
+  </head>
+  <body role="document">
+
+
+<div class="wrap container not-front">
+  <div class="content row">
+  <main class="main">
+    <div class="row page-content-header">
+      <div class="col-md-5 col-md-offset-7">
+      
+        <form class="headersearch" style="margin-bottom:-3px;" action="../search.html" method="get">
+        <input type="text" value="" name="q" id="q" class="form-control" /> 
+        <button  class="btn btn-default" type="submit" id="searchsubmit">Search</button>
+        </form>
+      
+      </div>
+    </div>
+    
+			<div class="row">
+				<div class="col-md-3">
+					<div class="sidebar">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										
+<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new_admin.html">What&#8217;s New in ownCloud 10.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_database/index.html">Database Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_files/index.html">File Sharing and Management</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Maintenance</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="enable_maintenance.html">Maintenance Mode Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup.html">Backing up ownCloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrade.html">How to Upgrade Your ownCloud Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="package_upgrade.html">Upgrade ownCloud From Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update.html">Upgrading ownCloud with the Updater App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_upgrade.html">Manual ownCloud Upgrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restore.html">Restoring ownCloud</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Migrating to a Different Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#trusted-domains">Trusted Domains</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="manually-moving-data-folders.html">How To Manually Move a Data Directory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_mimetypes/index.html">Mimetypes Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_server/index.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_user/index.html">User Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues and Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enterprise/index.html">Enterprise Features</a></li>
+</ul>
+
+								</ul>
+							</div>
+					</div>
+				</div>
+        
+
+				<div class="col-md-9">
+					<div class="page-content">
+            
+<ul class="prevnext-title list-unstyled list-inline">
+  <li class="prev">
+    <a href="restore.html" title="Previous Chapter: Restoring ownCloud"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Restoring own...</span>
+    </a>
+  </li>
+  <li class="next">
+    <a href="manually-moving-data-folders.html" title="Next Chapter: How To Manually Move a Data Directory"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">How To Manual... &raquo;</span>
+    </a>
+  </li>
+</ul>
+						
+  <div class="section" id="migrating-to-a-different-server">
+<h1>Migrating to a Different Server<a class="headerlink" href="#migrating-to-a-different-server" title="Permalink to this headline">¶</a></h1>
+<p>If the need arises ownCloud can be migrated to a different server. A typical use case would be a hardware change or a migration from the virtual appliance to a physical server. All migrations have to be performed with ownCloud offline and no accesses being made. Online migration is supported by ownCloud only when implementing industry-standard clustering and high-availability solutions before ownCloud is installed for the first time.</p>
+<p>To start, let us be specific about the use case. A configured ownCloud instance runs reliably on one machine. For some reason (e.g. more powerful machine is available, but a move to a clustered environment not yet needed) the instance needs to be moved to a new machine. Depending on the size of the ownCloud instance the migration might take several hours. As a prerequisite it is assumed that the end users reach the ownCloud instance via a virtual hostname (a <code class="docutils literal"><span class="pre">CNAME</span></code> record in DNS) which can be pointed at the new location. It is also assumed that the authentication method (e.g. LDAP) remains the same after the migration.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>At NO TIME any changes to the <strong>ORIGINAL</strong> system are required
+<strong>EXCEPT</strong> putting ownCloud into maintenance mode.</p>
+<p class="last">This ensures, should anything unforeseen happen, you can go
+back to your existing installation and provide your users
+with a running ownCloud while debugging the problem.</p>
+</div>
+<ol class="arabic simple">
+<li>Set up the new machine with your desired Linux distribution. At this point you can either install ownCloud manually via the compressed archive (see <a class="reference internal" href="../installation/source_installation.html"><em>Manual Installation on Linux</em></a>), or with your Linux package manager (see <a class="reference internal" href="../installation/linux_installation.html"><em>Preferred Linux Installation Method</em></a>).</li>
+<li>On the original machine turn on maintenance mode and then stop ownCloud. After waiting for 6-7 minutes for all sync clients to register the server as in maintenance mode, stop the application and/or Web server that serves ownCloud. (See <a class="reference internal" href="../configuration_server/occ_command.html#maintenance-commands-label"><span>Maintenance Commands</span></a>.)</li>
+<li>Create a dump from the database and copy it to the new machine, and import it into the new database (See <a class="reference internal" href="backup.html#backup-database-label"><span>Backup Database</span></a> and <a class="reference internal" href="restore.html#restore-database-label"><span>Restore Database</span></a>).</li>
+<li>Copy ONLY your data, configuration and database files from your original ownCloud instance to the new machine (See <code class="xref doc docutils literal"><span class="pre">backing-up-the-config-and-data-directories</span></code> and <a class="reference internal" href="restore.html#restore-directories-label"><span>Restore Directories</span></a>).</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You must keep the <code class="docutils literal"><span class="pre">data/</span></code> directory&#8217;s original filepath. Do not change this!</p>
+</div>
+<ol class="arabic simple">
+<li>The data files should keep their original timestamp (can be done by using <code class="docutils literal"><span class="pre">rsync</span></code> with <code class="docutils literal"><span class="pre">-t</span></code> option) otherwise the clients will re-download all the files after the migration. This step might take several hours, depending on your installation.</li>
+<li>With ownCloud still in maintenance mode (confirm!) and <strong>BEFORE</strong> changing the <code class="docutils literal"><span class="pre">CNAME</span></code> record in the DNS start up the database, Web server / application server on the new machine and point your Web browser to the migrated ownCloud instance. Confirm that you see the maintenance mode notice, that a logfile entry is written by both the Web server and ownCloud and that no error messages occur. Then take ownCloud out of maintenance mode and repeat. Log in as admin and confirm normal function of ownCloud.</li>
+<li>Change the <code class="docutils literal"><span class="pre">CNAME</span></code> entry in the DNS to point your users to the new
+location.</li>
+</ol>
+<p>With the <code class="docutils literal"><span class="pre">CNAME</span></code> updated, you now need to updated the trusted domains.</p>
+<div class="section" id="trusted-domains">
+<span id="trusted-domains-label"></span><h2>Trusted Domains<a class="headerlink" href="#trusted-domains" title="Permalink to this headline">¶</a></h2>
+<p>All URLs used to access your ownCloud server must be whitelisted in your
+<code class="docutils literal"><span class="pre">config.php</span></code> file, under the <code class="docutils literal"><span class="pre">trusted_domains</span></code> setting.
+Users are allowed to log into ownCloud only when they point their browsers to a URL that is listed in the <code class="docutils literal"><span class="pre">trusted_domains</span></code> setting.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This setting is important when changing or moving to a new domain name.</p>
+</div>
+<p>You may use IP addresses and domain names.
+A typical configuration looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>&#39;trusted_domains&#39; =&gt;
+  array (
+   0 =&gt; &#39;localhost&#39;,
+   1 =&gt; &#39;server1.example.com&#39;,
+   2 =&gt; &#39;192.168.1.50&#39;,
+),
+</pre></div>
+</div>
+<p>The loopback address, <code class="docutils literal"><span class="pre">127.0.0.1</span></code>, is automatically whitelisted, so as long as you have access to the physical server you can always log in.
+In the event that a load balancer is in place there will be no issues as long as it sends the correct X-Forwarded-Host header.
+When a user tries a URL that is not whitelisted the following error appears:</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/install-wizard-a4.png"><img alt="Error message when URL is not whitelisted" src="../_images/install-wizard-a4.png" style="width: 544.5px; height: 273.0px;" /></a>
+</div>
+</div>
+</div>
+
+
+            
+<ul class="prevnext-title list-unstyled list-inline">
+  <li class="prev">
+    <a href="restore.html" title="Previous Chapter: Restoring ownCloud"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Restoring own...</span>
+    </a>
+  </li>
+  <li class="next">
+    <a href="manually-moving-data-folders.html" title="Next Chapter: How To Manually Move a Data Directory"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">How To Manual... &raquo;</span>
+    </a>
+  </li>
+</ul>
+					</div>
+				</div>
+			</div>
+  </main>  
+  </div>
+</div>
+  </body>
+</html>

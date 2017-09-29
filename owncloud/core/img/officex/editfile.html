@@ -1,0 +1,152 @@
+<style type="text/css">
+.centerx {
+        position: fixed;
+        left: 0px;
+        text-align: center;
+        top: 44px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        color: #ffffff;
+}
+</style>
+
+<html>
+<body onload="myFunction();" style="background-color: #cc0000;">
+
+  <!-- Redcoolmedia Top Start-->
+  <div style="background-color: #ffffff; color: #333; font-family: arial, helvetica, sans-serif;i z-index:111112
+;">
+     <ul style="background-color: #ffffff; border: 0; border-bottom: solid 1px #ffffff; list-style-type: none;     display: block; margin: 0px 0px 1px 0px; text-align: right; list-style-type: none; padding: 10px 0px 10px 0px; ">
+                 <li style="">
+                        <a style="font-size:13px; margin-right: 6%; text-decoration: none; font-weight: bold; text-transform: uppercase; color: #ffffff; background: #cc0000 !important; padding: 10px;" href="https://www.redcoolmedia.net/" >Home
+                        </a>
+                 </li>
+         </ul>
+ </div>
+ <!-- Redcoolmedia Top End-->
+
+<div id="centerx" class="centerx">
+<br>
+<br>
+<h1>RedcoolMedia apps</h1>
+<br>
+<br>
+<h2>Loading, please wait...</h2>
+</div>
+
+<div style="font-size: 80px; color: #ffffff; z-index: 10000; top: 44px; height: 100%; width: 100%; text-align: center; position: fixed; left: 0px; display: table;">
+<span id="numberxx" style="display: table-cell; vertical-align: middle;">
+</span>
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+var count = 10;
+
+function countdown()
+{
+        document.getElementById("numberxx").innerHTML = count;
+        if ( count == 1 )
+        {
+                count = 20;
+        }
+        setTimeout(
+                function(){
+                        count = count - 1;
+                        if (typeof(Storage) !== "undefined") {
+                                // Code for localStorage/sessionStorage.
+                                localStorage.setItem("count", count);
+                        } else {
+                                // Sorry! No Web Storage support..
+                        }
+                        countdown();
+                 },
+                1000);
+}
+
+function myFunction() {
+
+        if (typeof(Storage) !== "undefined") {
+                // Code for localStorage/sessionStorage.
+                count = localStorage.getItem("count") - 1;
+        } else {
+                // Sorry! No Web Storage support..
+        }      
+
+	if ( count <= 0 )
+        {
+                count = 20;
+        }
+
+	countdown();	
+
+        var service = $_GET('service');
+        var username = $_GET('username');
+	var fileid = $_GET('fileid');
+	finalurl =  "https://www.redcoolmedia.net/owncloud/apps/onlyoffice/" + fileid + '?service=' + service + '&username=' + username;
+	//alert(finalurl);
+	window.location = finalurl;
+}
+
+
+function $_GET(param) {
+	var vars = {};
+	window.location.href.replace( location.hash, '' ).replace( 
+		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+		function( m, key, value ) { // callback
+			vars[key] = value !== undefined ? value : '';
+		}
+	);
+
+	if ( param ) {
+		return vars[param] ? vars[param] : null;	
+	}
+	return vars;
+}
+
+var getFromBetween = {
+    results:[],
+    string:"",
+    getFromBetween:function (sub1,sub2) {
+        if(this.string.indexOf(sub1) < 0 || this.string.indexOf(sub2) < 0) return false;
+        var SP = this.string.indexOf(sub1)+sub1.length;
+        var string1 = this.string.substr(0,SP);
+        var string2 = this.string.substr(SP);
+        var TP = string1.length + string2.indexOf(sub2);
+        return this.string.substring(SP,TP);
+    },
+    removeFromBetween:function (sub1,sub2) {
+        if(this.string.indexOf(sub1) < 0 || this.string.indexOf(sub2) < 0) return false;
+        var removal = sub1+this.getFromBetween(sub1,sub2)+sub2;
+        this.string = this.string.replace(removal,"");
+    },
+    getAllResults:function (sub1,sub2) {
+        // first check to see if we do have both substrings
+        if(this.string.indexOf(sub1) < 0 || this.string.indexOf(sub2) < 0) return;
+
+        // find one result
+        var result = this.getFromBetween(sub1,sub2);
+        // push it to the results array
+        this.results.push(result);
+        // remove the most recently found one from the string
+        this.removeFromBetween(sub1,sub2);
+
+        // if there's more substrings
+        if(this.string.indexOf(sub1) > -1 && this.string.indexOf(sub2) > -1) {
+            this.getAllResults(sub1,sub2);
+        }
+        else return;
+    },
+    get:function (string,sub1,sub2) {
+        this.results = [];
+        this.string = string;
+        this.getAllResults(sub1,sub2);
+        return this.results;
+    }
+};
+
+</script>

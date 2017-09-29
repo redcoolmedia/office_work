@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Background Jobs &mdash; ownCloud 10.0 Server Administration Manual 10.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/main.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '10.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="ownCloud 10.0 Server Administration Manual 10.0 documentation" href="../contents.html" />
+    <link rel="up" title="Server Configuration" href="index.html" />
+    <link rel="next" title="Config.php Parameters" href="config_sample_php_parameters.html" />
+    <link rel="prev" title="Configuring Memory Caching" href="caching_configuration.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1d2d44">
+
+  </head>
+  <body role="document">
+
+
+<div class="wrap container not-front">
+  <div class="content row">
+  <main class="main">
+    <div class="row page-content-header">
+      <div class="col-md-5 col-md-offset-7">
+      
+        <form class="headersearch" style="margin-bottom:-3px;" action="../search.html" method="get">
+        <input type="text" value="" name="q" id="q" class="form-control" /> 
+        <button  class="btn btn-default" type="submit" id="searchsubmit">Search</button>
+        </form>
+      
+      </div>
+    </div>
+    
+			<div class="row">
+				<div class="col-md-3">
+					<div class="sidebar">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										
+<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new_admin.html">What&#8217;s New in ownCloud 10.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_database/index.html">Database Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_files/index.html">File Sharing and Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_mimetypes/index.html">Mimetypes Management</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Server Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="security_setup_warnings.html">Warnings on Admin Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import_ssl_cert.html">Importing System-wide and Personal SSL Certificates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="occ_command.html">Using the occ Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activity_configuration.html">Configuring the Activity App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="antivirus_configuration.html">Virus Scanner Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching_configuration.html">Configuring Memory Caching</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Background Jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cron-jobs">Cron Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="config_sample_php_parameters.html">Config.php Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_configuration.html">Email Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="excluded_blacklisted_files.html">Excluding Directories and Blacklisting Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_sites.html">Linking External Sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_client_repos.html">Custom Client Download Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knowledgebase_configuration.html">Knowledge Base Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language_configuration.html">Language Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging_configuration.html">Logging Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="harden_server.html">Hardening and Security Guidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverse_proxy_configuration.html">Reverse Proxy Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thirdparty_php_configuration.html">Using Third Party PHP Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="js_css_asset_management_configuration.html">JavaScript and CSS Asset Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automatic_configuration.html">Automatic Configuration Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oc_server_tuning.html">ownCloud Server Tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_php_less_urls.html">Enable index.php-less URLs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_user/index.html">User Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues and Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enterprise/index.html">Enterprise Features</a></li>
+</ul>
+
+								</ul>
+							</div>
+					</div>
+				</div>
+        
+
+				<div class="col-md-9">
+					<div class="page-content">
+            
+<ul class="prevnext-title list-unstyled list-inline">
+  <li class="prev">
+    <a href="caching_configuration.html" title="Previous Chapter: Configuring Memory Caching"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Configuring M...</span>
+    </a>
+  </li>
+  <li class="next">
+    <a href="config_sample_php_parameters.html" title="Next Chapter: Config.php Parameters"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Config.php Pa... &raquo;</span>
+    </a>
+  </li>
+</ul>
+						
+  <div class="section" id="background-jobs">
+<span id="background-jobs-header"></span><h1>Background Jobs<a class="headerlink" href="#background-jobs" title="Permalink to this headline">¶</a></h1>
+<p>A system like ownCloud sometimes requires tasks to be done on a regular basis without requiring user interaction or hindering ownCloud&#8217;s performance.
+For that reason, as a system administrator, you can configure background jobs (for example, database clean-ups) to be executed without any user interaction.</p>
+<p>These jobs are typically referred to as <a class="reference external" href="https://en.wikipedia.org/wiki/Cron">Cron Jobs</a>.
+Cron jobs are commands or shell-based scripts that are scheduled to periodically run at fixed times, dates, or intervals.
+<code class="docutils literal"><span class="pre">cron.php</span></code> is an ownCloud internal process that runs such background jobs on demand.</p>
+<p>ownCloud plug-in applications can register actions with <code class="docutils literal"><span class="pre">cron.php</span></code> automatically to take care of typical housekeeping operations.
+These actions can include garbage collecting of temporary files or checking for newly updated files using <code class="docutils literal"><span class="pre">filescan()</span></code> on externally mounted file systems.</p>
+<div class="section" id="cron-jobs">
+<h2>Cron Jobs<a class="headerlink" href="#cron-jobs" title="Permalink to this headline">¶</a></h2>
+<p>You can schedule Cron jobs in three ways: <a class="reference internal" href="#cron">Cron</a>, <a class="reference internal" href="#webcron">Webcron</a>, or <a class="reference internal" href="#ajax">AJAX</a>.
+These can all be configured in the admin settings menu.
+However, the recommended method is to use Cron.
+The following sections describe the differences between each method.</p>
+<p>There are a number of things to keep in mind when choosing an automation
+option:</p>
+<p>Firstly, while the default method is AJAX, though the preferred way is to use Cron.
+The reason for this distinction is that AJAX is easier to get up and running.
+As a result, it makes sense (often times) to accept it in the interests of expediency.</p>
+<p>However, doing so is known to cause issues, such as backlogs and potentially not running every job on a heavily-loaded system.
+What’s more, an increasing amount of ownCloud automation has been migrated from Ajax to Cron in recent versions.
+For this reason, we encourage you to not use it for too long — especially if your site is rapidly growing.</p>
+<p>Secondly, while Webcron is better than Ajax, it too has limitations.
+For example, running Webcron will only remove a single item from the job queue,
+not all of them.
+Cron, however, will clear the entire queue.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It’s for this reason that we encourage you to use Cron — if at all possible.</p>
+</div>
+<div class="section" id="cron">
+<h3>Cron<a class="headerlink" href="#cron" title="Permalink to this headline">¶</a></h3>
+<p>Using the operating system Cron feature is the preferred method for executing regular tasks.
+This method enables the execution of scheduled jobs without the inherent limitations which the web server might have.</p>
+<p>For example, to run a Cron job on a *nix system every 15 minutes, under the default web server user (often, <code class="docutils literal"><span class="pre">www-data</span></code> or <code class="docutils literal"><span class="pre">wwwrun</span></code>) you must set up the following Cron job to call the <strong>cron.php</strong> script:</p>
+<div class="highlight-python"><div class="highlight"><pre># crontab -u www-data -e
+*/15  *  *  *  * php -f /path/to/your/owncloud/cron.php
+</pre></div>
+</div>
+<p>You can verify if the cron job has been added and scheduled by executing:</p>
+<div class="highlight-python"><div class="highlight"><pre># crontab -u www-data -l
+*/15  *  *  *  * php -f /path/to/your/owncloud/cron.php
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You have to make sure that <code class="docutils literal"><span class="pre">php</span></code> is found by <code class="docutils literal"><span class="pre">cron</span></code>. Best practice is to expressly add the full path like <code class="docutils literal"><span class="pre">/usr/bin/php</span></code>. On some systems it might be necessary to call <strong>php-cli</strong> instead of <strong>php</strong>.</p>
+</div>
+<p>Please refer to <a class="reference external" href="https://linux.die.net/man/1/crontab">the crontab man page</a> for the exact command syntax.</p>
+</div>
+<div class="section" id="webcron">
+<h3>Webcron<a class="headerlink" href="#webcron" title="Permalink to this headline">¶</a></h3>
+<p>By registering your ownCloud <code class="docutils literal"><span class="pre">cron.php</span></code> script address as an external webcron service (for example, <a class="reference external" href="http://www.easycron.com/">easyCron</a>), you ensure that background jobs are executed regularly.
+To use this type of service, your external webcron service must be able to access your ownCloud server using the Internet.
+For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>URL to call: http[s]://&lt;domain-of-your-server&gt;/owncloud/cron.php
+</pre></div>
+</div>
+</div>
+<div class="section" id="ajax">
+<h3>AJAX<a class="headerlink" href="#ajax" title="Permalink to this headline">¶</a></h3>
+<p>The AJAX scheduling method is the default option.
+However, it is also the <em>least</em> reliable.
+Each time a user visits the ownCloud page, a single background job is executed.
+The advantage of this mechanism, however, is that it does not require access to the system nor registration with a third party service.
+The disadvantage of this mechanism, when compared to the <a class="reference internal" href="#webcron">Webcron</a> service, is that it requires regular visits to the page for it to be triggered.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Especially when using the Activity App or external storages, where new
+files are added, updated, or deleted one of the other methods should be
+used.</p>
+</div>
+</div>
+<div class="section" id="parallel-task-execution">
+<h3>Parallel Task Execution<a class="headerlink" href="#parallel-task-execution" title="Permalink to this headline">¶</a></h3>
+<p>Regardless of the approach which you take, since ownCloud 9.1, Cron jobs can be run in parallel. This is done by running <code class="docutils literal"><span class="pre">cron.php</span></code> multiple times.
+Depending on the process which you’re automating, this may not be necessary.
+However, for longer-running tasks, such as those which are LDAP related, it may be very beneficial.</p>
+<p>There is no way to do so via the ownCloud UI.
+But, the most direct way to do so, is by opening three console tabs and in each one run <code class="docutils literal"><span class="pre">php</span> <span class="pre">cron.php</span></code>.
+Each of these processes would acquire their own list of jobs to process without overlapping any other.</p>
+</div>
+<div class="section" id="available-background-jobs">
+<h3>Available Background Jobs<a class="headerlink" href="#available-background-jobs" title="Permalink to this headline">¶</a></h3>
+<p>A number of existing background jobs are available to be run just for specific tasks.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>These jobs are generally only needed on large instances and can be run as background jobs.
+If the number of users in your installation ranges between 1,000 and 3,000, or if you’re using LDAP
+and it becomes a bottleneck, then admins can delete several entries in the <cite>oc_jobs</cite> table and replace
+them with the corresponding <cite>occ</cite> command, which you can see here:</p>
+<ul class="simple">
+<li><cite>OCA\Files_Trashbin\BackgroundJob\ExpireTrash</cite> -&gt; <cite>occ trashbin:expire</cite></li>
+<li><cite>OCA\Files_Versions\BackgroundJob\ExpireVersions</cite> -&gt; <cite>occ versions:expire</cite></li>
+<li><cite>OCA\DAVCardDAV\SyncJob</cite> -&gt; <cite>occ dav:sync-system-addressbook</cite></li>
+<li><cite>OCA\Federation\SyncJob</cite> -&gt; <cite>occ federation:sync-addressbooks</cite></li>
+</ul>
+<p class="last">If used, these should be scheduled to run on a daily basis.</p>
+</div>
+<p>While not exhaustive, these include:</p>
+<div class="section" id="expiretrash">
+<h4>ExpireTrash<a class="headerlink" href="#expiretrash" title="Permalink to this headline">¶</a></h4>
+<p>The ExpireTrash job, contained in <code class="docutils literal"><span class="pre">OCA\Files_Trashbin\BackgroundJob\ExpireTrash</span></code>, will remove any file in the ownCloud trash bin which is older than the specified maximum file retention time.
+It can be run, as follows, using the OCC command:</p>
+<div class="highlight-python"><div class="highlight"><pre>occ trashbin:expire
+</pre></div>
+</div>
+</div>
+<div class="section" id="expireversions">
+<h4>ExpireVersions<a class="headerlink" href="#expireversions" title="Permalink to this headline">¶</a></h4>
+<p>The ExpireVersions job, contained in <code class="docutils literal"><span class="pre">OCA\Files_Versions\BackgroundJob\ExpireVersions</span></code>, will expire versions of files which are older than the specified maximum version retention time.
+It can be run, as follows, using the OCC command:</p>
+<div class="highlight-python"><div class="highlight"><pre>occ versions:expire
+</pre></div>
+</div>
+</div>
+<div class="section" id="syncjob-carddav">
+<h4>SyncJob (CardDAV)<a class="headerlink" href="#syncjob-carddav" title="Permalink to this headline">¶</a></h4>
+<p>The CardDAV SyncJob, contained in <code class="docutils literal"><span class="pre">OCA\DAV\CardDAV\SyncJob</span></code>, syncs the local
+system address book, updating any existing contacts, and deleting any expired
+contacts.
+It can be run, as follows, using the OCC command:</p>
+<div class="highlight-python"><div class="highlight"><pre>occ dav:sync-system-addressbook
+</pre></div>
+</div>
+</div>
+<div class="section" id="syncjob-federation">
+<h4>SyncJob (Federation)<a class="headerlink" href="#syncjob-federation" title="Permalink to this headline">¶</a></h4>
+<p>OCAFederationSyncJob</p>
+<p>It can be run, as follows, using the OCC command:</p>
+<div class="highlight-python"><div class="highlight"><pre>occ federation:sync-addressbooks
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+            
+<ul class="prevnext-title list-unstyled list-inline">
+  <li class="prev">
+    <a href="caching_configuration.html" title="Previous Chapter: Configuring Memory Caching"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Configuring M...</span>
+    </a>
+  </li>
+  <li class="next">
+    <a href="config_sample_php_parameters.html" title="Next Chapter: Config.php Parameters"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Config.php Pa... &raquo;</span>
+    </a>
+  </li>
+</ul>
+					</div>
+				</div>
+			</div>
+  </main>  
+  </div>
+</div>
+  </body>
+</html>

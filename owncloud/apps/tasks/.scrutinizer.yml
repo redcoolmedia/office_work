@@ -1,0 +1,14 @@
+filter:
+    excluded_paths:
+        - '3rdparty/*'
+        - 'js/vendor/*'
+        - 'js/public/*'
+
+imports:
+    - javascript
+    - php
+
+checks:
+    php:
+        code_rating: true
+        duplication: true

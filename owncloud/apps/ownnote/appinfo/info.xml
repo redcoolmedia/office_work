@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<info>
+    <id>ownnote</id>
+    <name>OwnNote</name>
+    <description></description>
+    <licence>AGPL</licence>
+    <author>Ben Curtis</author>
+    <version>1.08</version>
+    <requiremin>7.0.3</requiremin>
+    <dependencies>
+        <lib>curl</lib>
+        <owncloud min-version="7.0.3" max-version="10.0" />
+    </dependencies>
+</info>

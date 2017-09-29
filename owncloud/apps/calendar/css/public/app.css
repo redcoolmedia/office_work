@@ -1,0 +1,1130 @@
+.app {
+	height: 100%;
+	width: 100%;
+}
+
+#fullcalendar table {
+	white-space: inherit !important;
+}
+
+.fc-state-highlight.fc-day-number,
+#fullcalendar tbody tr,
+#fullcalendar tbody tr:hover,
+#fullcalendar tbody tr:focus {
+	background: transparent !important;
+}
+
+#popover-container,
+#importpopover-container {
+	max-height: 0 !important;
+	max-width: 0 !important;
+	overflow: hidden !important;
+}
+
+#app-navigation .app-navigation-input {
+	width: 95%;
+}
+
+#app-navigation .calendarlist-fieldset {
+	padding: 0 5px;
+}
+
+#app-navigation .color-button {
+	height: 25px;
+	border: 0;
+}
+
+#app-navigation .close-button {
+	height: 30px;
+	width: 30px;
+	padding: 0;
+	position: relative;
+}
+
+#app-navigation .accept-button {
+	width: 100%;
+	padding: 8px;
+}
+
+#app-navigation .new-entity,
+#app-navigation .subscription-title {
+	display: block;
+	width: 100%;
+	line-height: 44px;
+	padding: 0 44px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #4d4d4d;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#app-navigation .new-entity,
+#app-navigation .new-entity .new-entity-title {
+	cursor: pointer;
+}
+
+#app-navigation .new-entity .new-entity-title::before {
+	left: 18px;
+	position: absolute;
+	font-size: 150%;
+	content: '+';
+}
+
+#app-navigation .new-entity:hover {
+	color: #000;
+}
+
+#app-navigation .add-new .new-accept-button {
+	position: relative;
+}
+
+#app-navigation .add-new .color-button {
+	height: 25px;
+	border: 0;
+	background: #1a1a1a;
+}
+
+.add-new-subscription .calendarlist-fieldset input {
+	width: 130px;
+	margin-right: 2px;
+}
+
+.add-new-subscription .calendarlist-fieldset select {
+	width: 80px;
+}
+
+#app-navigation .app-navigation-list {
+	width: 100%;
+}
+
+#app-navigation .app-navigation-list-item .calendarCheckbox,
+#publicinformationscontainer .calendarCheckbox {
+	position: absolute;
+	margin-left: 17px;
+	margin-top: 16px;
+	width: 12px;
+	height: 12px;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+#app-navigation .app-navigation-list-item .calendarCheckbox.unchecked {
+	background: transparent !important;
+}
+
+#app-navigation .app-navigation-list-item .icon-loading-small {
+	position: absolute;
+	margin-left: 15px;
+	margin-top: 14px;
+}
+
+#app-navigation .app-navigation-list-item .utils {
+	height: 44px;
+	padding: 0 5px 0 0;
+}
+
+#app-navigation .app-navigation-list-item .utils .action span {
+	opacity: .3;
+}
+
+#app-navigation .app-navigation-list-item .utils .action.withitems span {
+	opacity: .7 !important;
+}
+
+#app-navigation .app-navigation-list-item .utils .action span:hover {
+	opacity: 1;
+}
+
+#app-navigation .app-navigation-list-item .active {
+	/* Core Override */
+	background: transparent !important;
+}
+
+#app-navigation .app-navigation-list-item .active a {
+	/* Core Override */
+	background-color: transparent !important;
+}
+
+#app-navigation .app-navigation-list-item .active:hover .calendarlist-icon {
+	/* Core Override */
+	background-color: transparent !important;
+}
+
+#app-navigation .app-navigation-list-item > a {
+	padding: 0 66px 0 44px !important;
+}
+
+#app-navigation .app-navigation-list-item > a.calendar-list-cut-name {
+	padding: 0 107px 0 44px !important;
+}
+
+#app-navigation .app-navigation-list-item .editfieldset {
+	padding: 0 4px;
+}
+
+#app-navigation .app-navigation-list-item .editfieldset .calendartype {
+	width: 100%;
+}
+
+#app-navigation .buttongroups .accept-button {
+	width: 47%;
+	padding: 17px;
+	margin-right: 7px;
+}
+
+#app-navigation .editfieldset .close-button {
+	width: 47%;
+	padding: 17px;
+}
+
+#app-navigation .app-navigation-list-item .caldavURL input {
+	width: 75%;
+}
+
+#app-navigation .app-navigation-entry-menu li {
+	width: auto !important;
+	float: inherit;
+	height: 36px;
+}
+
+#app-navigation .app-navigation-entry-menu li button {
+	float: inherit !important;
+	margin: 0;
+	padding: 0;
+	width: 100% !important;
+}
+
+#app-navigation .app-navigation-entry-menu li span {
+	display: inline-block;
+	height: 36px;
+	line-height: 36px;
+	padding-right: 10px;
+	font-weight: 400;
+	float: left;
+}
+
+#app-navigation .app-navigation-entry-menu li span.svg {
+	padding: 5px;
+	width: 36px;
+	box-sizing: border-box;
+}
+
+#app-navigation .app-navigation-list-item .utils {
+	display: inline-block;
+}
+
+#app-navigation .app-navigation-list-item .utils span.action.withitems {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#app-navigation .app-navigation-list-item .utils .action span {
+	display: inline-block;
+	line-height: 20px;
+	height: 20px;
+	width: 16px;
+	padding: 12px 6px;
+	cursor: pointer;
+	vertical-align: top;
+}
+
+#app-navigation .app-navigation-list-item .utils .action .icon-shared {
+	padding: 12px 0;
+}
+
+#app-navigation .app-navigation-list-item span.calendarlist-icon.shared {
+	width: 40px;
+	opacity: 1;
+	padding-left: 0;
+	padding-right: 5px;
+}
+
+#app-navigation .app-navigation-list-item .calendar-share-list .utils .action span {
+	padding: 0 6px;
+}
+
+#app-navigation .app-navigation-list-item:hover .utils.active {
+	display: inline-block;
+}
+
+#app-navigation .app-navigation-list-item:hover .utils > a {
+	background-color: transparent !important;
+}
+
+#app-navigation .refresh-shares {
+	position: absolute;
+	right: 15px;
+	height: 15px;
+	width: 15px;
+	top: 15px;
+	z-index: 1000;
+}
+
+#app-navigation > ul {
+	height: auto;
+}
+
+/* ColorPicker overrides. */
+.colorpicker {
+	display: block;
+	height: auto;
+	padding-bottom: 3px;
+	padding-top: 3px;
+}
+
+.colorpicker .colorpicker-list {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.colorpicker .colorpicker-list li {
+	height: 24px;
+	width: 24px !important;
+}
+
+.colorpicker .colorpicker-list li.selected {
+	border: 1px solid #333;
+}
+
+.colorpicker .colorpicker-list li.randomcolour {
+	background-image: url('../../img/random.svg');
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+/* scroll issues */
+#scrollable {
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: absolute;
+	top: 85px;
+	bottom: 44px;
+	width: 250px;
+	transition: 200ms margin ease-in-out;
+}
+
+#datepickercontainer.active + div#calendarlistcontainer #scrollable,
+#datepickercontainer.active + div#publicinformationscontainer #scrollable {
+	margin-top: 185px;
+}
+
+#datepicker-ng-show-container {
+	display: block !important;
+	height: 185px;
+	overflow: hidden;
+	transition: 200ms ease-in-out all;
+}
+
+#datepicker-ng-show-container.ng-hide {
+	height: 0;
+}
+
+/* Spacing */
+#spacer {
+	height: 44px;
+}
+
+/* Public */
+
+#app-navigation .davbuttons {
+	width: 100%;
+	height: 44px;
+}
+
+#app-navigation .davbuttons .button {
+	font-weight: normal;
+	padding: 8px;
+	width: 48%;
+}
+
+#app-navigation .davbuttons .button.first {
+	margin-left: 5px;
+	-webkit-border-radius: 3px 0 0 3px;
+	-ms-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+}
+
+#app-navigation .davbuttons .button.last {
+	margin-left: -8px;
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-ms-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+
+.public-calendar-name {
+	font-size: 20px;
+	padding: 5px;
+	border-radius: 5px;
+	margin: 5px auto;
+}
+
+input.public-linkinput {
+	width: 94%;
+	margin: 6px auto;
+}
+
+#publicinformationscontainer .displayname {
+	padding-left: 44px !important;
+}
+
+#publicinformationscontainer .calendarCheckbox {
+	cursor: default;
+	margin-top: 5px;
+}
+
+.public-ics-download {
+	width: 100%;
+	display: block;
+	height: 25px;
+	font-weight: 300;
+	font-size: 14px;
+	cursor: pointer;
+	z-index: 10;
+	padding: 7px 0 0;
+	text-align: center;
+	background-color: rgba(240, 240, 240, .9);
+	border: 1px solid rgba(240, 240, 240, .9);
+	background-position: 5%;
+	border-radius: 3px;
+	margin: 7px auto;
+}
+
+.integration-code {
+	width: 93%;
+	height: 100px;
+	margin: 5px auto;
+}
+
+.public-left-side {
+	margin: 100px 10px auto;
+}
+
+/* Publishing */
+.publishing {
+	margin: auto 10px;
+}
+
+.publication-tools {
+	cursor: pointer;
+	margin: 5px auto auto 5px;
+}
+
+input.mailerInput {
+	width: 94%;
+}
+
+.mailerInput + button {
+	width: 100%;
+	padding: 6px;
+}
+
+/* Calendar Sharing */
+input.shareeInput {
+	width: 89%;
+	margin: 6px;
+}
+
+li.calendar-share-item {
+	margin-left: 12px;
+	width: 95% !important;
+}
+
+ul.dropdown-menu {
+	max-height: 100px;
+	overflow-y: scroll;
+	border: 1px #ddd solid;
+	border-radius: 0 0 3px 3px;
+	margin-top: -7px;
+	margin-left: 6px;
+	width: 94%;
+}
+
+ul.dropdown-menu li {
+	height: 25px;
+}
+
+ul.dropdown-menu li:last-child {
+	border-bottom: none !important;
+}
+
+#app-navigation ul.dropdown-menu a {
+	min-height: 22px;
+	max-height: 22px;
+	padding: 0 10px;
+	line-height: 2;
+}
+
+ul.dropdown-menu li > a:hover {
+	background-color: grey !important;
+}
+
+/* Fullcalendar modifications */
+
+.fc th,
+.fc .fc-axis,
+.fc-day-grid-event .fc-time,
+.fc-ltr .fc-basic-view .fc-day-number,
+.fc-ltr .fc-basic-view .fc-week-number,
+.fc-time-grid-event .fc-time {
+	opacity: .8;
+	font-size: 80%;
+	font-weight: normal;
+}
+
+.fc-day-number.fc-other-month {
+	opacity: .1 !important;
+}
+
+.fc td.fc-widget-header {
+	border-top: none;
+}
+
+.fc th,
+.fc td {
+	border-left: none;
+	border-bottom: none;
+}
+
+/* border styles for grid, highlight full-hour horizontal lines */
+.fc-unthemed tr td {
+	border-top-color: #eee;
+}
+.fc-unthemed tr:nth-child(even) td {
+	border-top-color: #f8f8f8;
+}
+.fc-unthemed th,
+.fc-unthemed td,
+.fc-unthemed thead,
+.fc-unthemed tbody,
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-row,
+.fc-unthemed .fc-popover {
+	border-color: #f8f8f8;
+}
+
+/* properly size events */
+.fc-event {
+	font-size: 13px;
+	line-height: initial;
+	padding-left: 3px;
+}
+
+.app-navigation-entry-menu .icon-link {
+	background-size: 16px;
+}
+
+#datepicker .datepicker_current,
+#app-navigation .togglebuttons,
+#app-navigation .togglebuttons .btn-group {
+	float: left;
+}
+
+#app-navigation .togglebuttons .button.active {
+	background-color: rgba(255, 255, 255, .95);
+	color: #111;
+}
+
+#app-navigation .togglebuttons .button.today {
+	float: right;
+}
+
+#app-navigation .togglebuttons .button.today:focus {
+	background-color: rgba(240, 240, 240, .9);
+}
+
+#datepicker .pickerbody-hide {
+	display: none;
+}
+
+#datepicker .datepicker_left,
+#datepicker .datepicker_right {
+	height: 34px;
+	width: 35px;
+	margin: 5px 0 0;
+	font-weight: normal;
+}
+
+#datepicker table {
+	display: inline-block;
+	margin-left: 5px;
+}
+
+#datepicker table td button {
+	margin: 0;
+	font-weight: 300;
+}
+
+#datepicker thead {
+	display: none;
+}
+
+.datepicker-heading {
+	margin: 0 5px;
+}
+
+.datepicker-heading .btn-arrow {
+	padding-bottom: 9px;
+	padding-top: 10px;
+	padding-left: 2px;
+	margin-right: 0;
+}
+
+.datepicker-heading .btn-date {
+	width: 180px;
+	height: 36px;
+	margin-left: 4px;
+}
+
+#datepicker table thead tr {
+	width: 100%;
+}
+
+#datepicker table thead .text-center {
+	text-align: center;
+}
+
+#datepicker table tbody tr,
+#datepicker table tbody tr:hover {
+	background: transparent;
+}
+
+#datepicker table tbody button {
+	margin: 0;
+	padding: 6px 9px;
+	background: transparent;
+	cursor: pointer;
+	border-radius: 0;
+	border-top: 0;
+	border-left: 0;
+}
+
+#datepicker table tbody tr.uib-weeks td:last-child button {
+	border-right: none;
+}
+
+#datepicker table tbody tr.uib-weeks:last-child td button {
+	border-bottom: none;
+}
+
+#datepicker table tbody button {
+	max-width: 34px; /* Hack for Firefox for overflowing tables */
+}
+
+#datepicker table tbody button.active {
+	background-color: rgba(240, 240, 240, .9);
+}
+
+#datepicker table tbody button span {
+	cursor: pointer;
+}
+
+#datepicker .text-muted {
+	color: #aaa;
+}
+
+#app-navigation {
+	padding-bottom: 0;
+}
+
+#app-navigation .togglebuttons {
+	width: 100%;
+	height: 44px;
+}
+
+#app-navigation .togglebuttons .button {
+	font-weight: normal;
+	padding: 8px;
+}
+
+#app-navigation .togglebuttons .button.first {
+	margin-left: 5px;
+	-webkit-border-radius: 3px 0 0 3px;
+	-ms-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+}
+
+#app-navigation .togglebuttons .button.middle {
+	margin-left: -7px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-ms-border-radius: 0;
+	border-radius: 0;
+}
+
+#app-navigation .togglebuttons .button.last {
+	margin-left: -8px;
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-ms-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+
+#app-navigation .togglebuttons .button.today {
+	margin-right: 5px;
+}
+
+/* Overrides */
+
+.glyphicon-chevron-left {
+	background: url("../../img/leftarrow.svg") center center no-repeat;
+}
+
+.glyphicon-chevron-right {
+	background: url("../../img/rightarrow.svg") center center no-repeat;
+}
+
+.glyphicon {
+	display: block;
+	height: 15px;
+}
+
+.advanced select {
+	height: 32px;
+}
+
+/* TODO : Remove this Hack */
+.margin-class {
+	margin-top: 4px;
+}
+
+.ui-timepicker .ui-timepicker-hour-cell a,
+.ui-timepicker .ui-timepicker-minute-cell a {
+	text-overflow: inherit !important;
+}
+
+.events--fieldset span,
+.advanced--fieldset span {
+	display: block;
+}
+
+.advanced .btn-timezone {
+	float: right;
+}
+
+.advanced .start-end-container {
+	margin-right: 15px;
+}
+
+.advanced .advanced--checkbox {
+	margin: 10px 0;
+}
+
+.advanced .timezone-container {
+	margin: 4px -17px;
+}
+
+.advanced .timezone-select {
+	width: 110% !important; /* very dirty hack to fix alignment issues. */
+}
+
+.modal-open .modal.popover,
+.modal-open .modal.import {
+	position: absolute;
+	width: 450px;
+	background: #fff;
+	box-shadow: 0 0 3px #999;
+	overflow: hidden;
+	margin-left: 0 !important;
+	padding-bottom: 12px;
+}
+
+.modal-open .modal.import {
+	top: 75px;
+	left: calc(50% - 225px);
+	padding: 20px;
+	min-height: 25px;
+	max-height: calc(100% - 150px - 45px);
+	overflow-y: scroll;
+}
+
+.events .events--fieldset {
+	padding: 3px 0;
+}
+
+.events .events--fieldset textarea {
+	height: 4.5em;
+	width: 96%;
+	resize: vertical;
+}
+
+.events .events--fieldset span {
+	display: block;
+}
+
+.events .events--fieldset select {
+	width: 99.5%;
+	margin-right: 0;
+}
+
+.events .events--date {
+	width: 70px;
+}
+
+.advanced .events--date {
+	width: 100%;
+}
+
+.events .events--input__full {
+	width: 345px;
+}
+
+.events .h2.events--input {
+	width: 96%;
+	font-size: 20px;
+}
+
+.events .events--time {
+	width: 60px;
+}
+
+.advanced .events--time {
+	width: 100%;
+}
+
+.events .events--checkbox {
+	padding: 3px 0;
+}
+
+.modal-open .modal.popover .modal-content {
+	padding: 20px;
+}
+
+.fc-row.fc-rigid {
+	overflow: visible !important;
+}
+
+.advanced--container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 20px;
+	margin-bottom: 120px;
+}
+
+.advanced--fieldset {
+	margin-bottom: 10px;
+}
+
+.advanced .advanced--input,
+.advanced .h2.advanced--input {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.advanced .h2.advanced--input {
+	font-size: 20px;
+}
+
+.advanced .advanced--fieldset select {
+	width: 100%;
+}
+
+.advanced .advanced--fieldset textarea {
+	height: 4.5em;
+	resize: vertical;
+}
+
+.advanced .tabHeaders {
+	margin: 0 0 15px;
+	float: left;
+	width: 100%;
+}
+
+/* Primary action button, use sparingly */
+.delete,
+input[type="submit"].delete,
+input[type="button"].delete,
+button.delete,
+.button.delete {
+	border: 1px solid #c60000;
+	background-color: #d60000;
+	color: #fff;
+}
+
+button.delete:hover,
+button.delete:focus {
+	border: 1px solid #d60000;
+	background-color: #f00;
+	color: #fff;
+}
+
+.advanced .advanced--list {
+	padding: 10px 0;
+	width: 100%;
+}
+
+.advanced .advanced--button__icon {
+	padding: 10px;
+}
+
+.advanced .advanced--button-area {
+	border-top: 1px solid #eee;
+	padding: 5px 20px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.advanced .pull-half {
+	width: 45% !important;
+}
+
+.advanced .sidebar-top {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 120px;
+	overflow-y: scroll;
+}
+
+.advanced .pull-quarter {
+	width: 22% !important;
+}
+
+.advanced .btn-half {
+	width: 45%;
+}
+
+#importdialog .btn-full,
+.advanced .btn-full,
+.advanced .pull-full {
+	width: 100%;
+}
+
+.advanced--fieldset-attendeelist li {
+	display: block;
+	cursor: pointer;
+	width: 100%;
+}
+
+.advanced--fieldset-attendeelist .advanced--toggler,
+.advanced--fieldset-reminderlist .advanced--toggler {
+	padding: 5px 2px;
+	display: block;
+	width: 100%;
+	float: left;
+}
+
+.advanced--fieldset-attendeelist .advanced--toggler:hover,
+.advanced--fieldset-reminderlist .advanced--toggler:hover {
+	background: #efefef;
+	cursor: pointer;
+}
+
+.advanced--fieldset .hint {
+	font-size: .75em;
+	color: #888;
+}
+
+.advanced--fieldset .inline {
+	display: inline;
+}
+
+.dropdown-menu {
+	width: 100%;
+}
+
+.dropdown-menu li {
+	border-bottom: 1px solid #ddd;
+	background: #f8f8f8;
+}
+
+.dropdown-menu li a {
+	display: block;
+	padding: 5px;
+}
+
+.dropdown-menu li a:hover {
+	background: #eee;
+}
+
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float: right;
+}
+
+.hide {
+	display: none;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.clear-both {
+	clear: both;
+}
+
+.icon-timezone {
+	background: url("../../img/timezone.svg") center center no-repeat;
+	display: block;
+}
+
+.input-with-button-on-right-side {
+	width: 76% !important;
+	float: left;
+	margin-right: 6px !important;
+}
+
+.button-next-to-input {
+	height: 32px;
+	width: 32px;
+}
+
+#app-settings .settings-fieldset .settings-fieldset-interior input:not([type="checkbox"]) {
+	width: 90%;
+}
+
+#app-settings .settings-fieldset .settings-fieldset-interior select {
+	width: 40%;
+}
+
+#app-settings .settings-fieldset .settings-upload {
+	position: absolute;
+	top: 12.5px;
+	width: 100%;
+	display: block;
+	height: 25.88235px;
+	font-weight: 300;
+	font-size: 14px;
+	cursor: pointer;
+	z-index: 10;
+	padding: 7.33333px 0 0 !important;
+	text-align: center;
+	background-color: rgba(240, 240, 240, .9);
+	border: 1px solid rgba(240, 240, 240, .9);
+	background-position: 5%;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#app-settings .settings-fieldset .settings-fieldset-interior-item:hover {
+	background: transparent;
+}
+
+#app-settings .settings-fieldset .settings-fieldset-interior-upload {
+	width: 95%;
+	height: 55px;
+}
+
+#app-settings .settings-fieldset .settings-fieldset-interior-upload input {
+	position: absolute;
+	top: 18px;
+}
+
+#app-settings .settings-fieldset .settings-fieldset-interior-inline-label {
+	display: inline;
+}
+
+#app-settings .settings-fieldset .settings-fieldset-interior input[type="file"] {
+	top: 12.5px;
+	position: absolute;
+	width: 100%;
+	height: 33.21569px;
+	padding: 0;
+	font-size: 16px;
+	margin-left: 0;
+	overflow: hidden;
+	z-index: 20;
+	opacity: 0;
+}
+
+.dialog .table {
+	width: 100%;
+	-webkit-transition: .05s ease-out .05s;
+	-moz-transition: .05s ease-out .05s;
+	-ms-transition: .05s ease-out .05s;
+	transition: .05s ease-out .05s;
+}
+
+.dialog .table:hover {
+	background: #ddd;
+	-webkit-transition: .05s ease-out .05s;
+	-moz-transition: .05s ease-out .05s;
+	-ms-transition: .05s ease-out .05s;
+	transition: .05s ease-out .05s;
+}
+
+#importdialog .buttongroup button {
+	padding: 10px;
+}
+
+#importdialog .loading {
+	background-position: 2px;
+}
+
+#importdialog .loading.disabled {
+	background-color: #6c8fc0;
+}
+
+#importdialog table,
+#importdialog tbody tr,
+#importdialog tbody tr:hover,
+#importdialog tbody tr:focus {
+	background: transparent !important;
+}
+
+.progress-bar {
+	margin: 0;
+	float: left;
+	width: 0;
+	height: 100%;
+	font-size: 12px;
+	line-height: 20px;
+	background-color: #0082c9;
+}
+
+#importdialog table {
+	width: 100%;
+}
+
+#importdialog td.name {
+	width: 40%;
+}
+
+#importdialog td.calendartype {
+	width: 50%;
+}
+
+#importdialog td.calendartype select {
+	width: 90%;
+}
+
+#importdialog td.buttongroup {
+	width: 10%;
+}
+
+#importdialog tr {
+	height: 38px;
+}
+
+.import-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #000;
+	opacity: .6;
+}
+
+#importdialog .spacer {
+	clear: both;
+	height: 25px;
+}

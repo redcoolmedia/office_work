@@ -1,0 +1,32 @@
+{
+    "hashes": {
+        "LICENSE": "3a02a6ec14e9d076b79aea8301eab31053c6600b68dcfa6261e10edaa7296a87c8767e35f2411d234b90111fcaf6b4a55c49aa2790a1a0d015213218bb7549fc",
+        "appinfo\/app.php": "eccb2071a3488bba347128030b22a7dd8fa4a757690f07424c1a3e2c1849f283ff3f738f3a75eb41afced4fbd2aa46df820b696cbd797f1662dc9aae0a34bfa2",
+        "appinfo\/info.xml": "f29cfcf8a9a43d8bdf5cd8bcc8d9bd25207e77f4dfbd6a75a8dc98e084785c517034490b31588a780373aac9b4daf46655946f9d678570f1522f0d98ec014241",
+        "appinfo\/routes.php": "eb7166c6896c0dfcae2f0bd90da8383c8ac4c6437fb56d3fc4cc42d5cebc04689d9c6de194a1bae8f0166ced0b2a00b8be742c778032923c8a9768fe100287b4",
+        "css\/market.min.css": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e",
+        "img\/market.svg": "aa58c4a00216f564ad3dae6c4e41ee1efd6738bd843dc2b8273a0be9e8735ba64db1eb780ce5fc0a58c0e4295667da5d9b432c92b1c8ad616a93e1424e50bf17",
+        "js\/market.bundle.js": "eff1f91bb09dc8bd49b89302ac8e3f62ea4e488f4b2358ac098c241f8a18f27a66f3431a13414bf251722cd5b4d2f8ce1eb1d0c04fc74935ff9811a4daa6b05f",
+        "lib\/Application.php": "b795646b9f9753aa88c2d4d09f9c134513754c997e7d40068ccdfe6f594147a1a56ed077011a0367aa093806b1cb42d951539d005e934378bcefa5a6204770b1",
+        "lib\/Command\/InstallApp.php": "2aeaaf1e9fe773cc19d6e4591f8084458ee48630ea774edd07e29e464d4fcdc774c2fe6738c6119f717a0a95b2925359fc1aacdd11752efe3e13c587ecbfbeea",
+        "lib\/Command\/ListApps.php": "afe08ce31f3670236618c59cc9746c5db36160589dea2f6f882364605c028926f2ffe02ddeea9d45ce518d723a19d19f2bc4ca30ad4fb541a95657226d4c1f31",
+        "lib\/Command\/UpgradeApp.php": "191591dab36304bd41dd7fff1ea7178f3e81a0f013c8169f8b9952de559a296da288e03c6721fe47eea2166f406e496667350833b2f71e1cc7dd551964a57ccf",
+        "lib\/Controller\/LocalAppsController.php": "c3f24b799ce66c18b9e085e08712155bcab4c7aae6fbcc6e5fdc40c4f50811342f61d3c29aef0e55ba23012a3983e4a4ac0fad041eeb1bee8506e00adc5bc8c9",
+        "lib\/Controller\/MarketController.php": "3581bb3314d26d0cf928d33c31055f98a33c512b53130bd5bb5c93119463189416cad01c4da406e7758ddfb521341c32353a42b0139a159149ca624cb4406f29",
+        "lib\/Controller\/PageController.php": "b35d2ce4f88ff212ec21188b9aaa7285843484f77966e8ce39887149ce59fcc86fd93e7eebcf5d81bf9495d0c394d819e26a0630d3be8b8e2ea519cdb2f0d1dd",
+        "lib\/Listener.php": "d7d944ff3cc77f612c877105fc1bf688a62e872d3d935b1ed0b54ecd7cd72c1949a12b346111e5387b297581102b105cf32abf62ebf6834ccea4c0ff60662fff",
+        "lib\/MarketService.php": "6377eb6f01f888cc1f8d5c1d8a905bac57ffcb7cbe01e08cb2fad0697152eb6dcbe77b9112700037f40b8054cd9e0f1cc7310f1cc0530777b47ec493e23a95f1",
+        "templates\/index.php": "2ec02d30453c048e93c95ee84858fb75d72301d93c36876671602e2535f686e624cce61d628eefbd5801a43456ab18e8d99770a8263215f5ce6984ef10a9c5ec",
+        "vendor\/autoload.php": "dc710e93f65077bbf141df3bdd3122247eba0397ce07708a6618c46a3fd8ba8f1fa3685240f4dd7d7239bd61541f457c2ee2ea125aa13b99bf94c6454914edfc",
+        "vendor\/composer\/ClassLoader.php": "68086bbf18985981f367037635e53545daba40f37c9eff9b750ec47cd99df3c8a5bc4fd56a04a0bf6ed32399c972196ec57680614ab16715652a67186b261d73",
+        "vendor\/composer\/LICENSE": "f3bb64009f41a425df5a9bbab53490f0eb9b74fa8d6aaa2f57efb928edc4ffff330260666edeaa04a91fed708c3663371cf01b284f3a08d6698aaef7a23f355a",
+        "vendor\/composer\/autoload_classmap.php": "ff3569de18e23492e69892a07361e3716fc95bc2ab1afc111039997c5815a0652c8d7c660a2fb6c6978feddfe6041cd98d1fc90e5b277960d7274ea669b04a40",
+        "vendor\/composer\/autoload_namespaces.php": "0ac6bde683c053d62b7024686ecced083ca1a326d5346a248b1a058ac74a5af71d515d311ce76df799a518027f734b80b9e7f6e8022a9556c0f24ce90240d822",
+        "vendor\/composer\/autoload_psr4.php": "1d78c03bc79c82476a9b806cba84ce9067f3dd1a2565f5616f6bcdb0c2eae4ccee33e7267f78a636c9e02904253c024cef43ec01d789918294586d2a1b4654fb",
+        "vendor\/composer\/autoload_real.php": "942d29478353f9dd804fffc844f8aaa6c96a167740187da05ade8c3d7136d1cabd57f1dbe4d4d4dbdc72fde49436bc5f7096015960e70c49aab84e85cd99ac01",
+        "vendor\/composer\/autoload_static.php": "0bace9b863878ed86ba140a8c0c3bfd78668a6268b31486c2dab7a08dcc423f62a036c21b65776cefae689bf032667ab624b6df789eec26967a0bc8cbbcc35da",
+        "vendor\/composer\/installed.json": "b7a9336ed3a424b5d4d59d9b20d0bbc33217207b584db6b758fddb9a70b99e7c8c9f8387ef318a6b2039e62f09a3a2592bf5c76d6947a6ea1d107b924d7461f4"
+    },
+    "signature": "eypDDkg2AgkRj7djM9Fb9M\/+ozLHTft5lajRGGbdtMV2mMPGxZr0Qy4JpIWjez5ipA\/938RwVq1SPbaK+HjlAzIajbYepqUYG94P\/DwneI91IPiRVWzfpord4YVXHy5OH8ZrKq3X\/XAyNIRmcihQ5Te+nN0u5YEZ5O94L9x4tQDPWQ6SdOTGZVAk82xgPyVd50ExgPvePBT7VgcAqDFt\/hiJBPnNOiKzPW4zuNUJsCI6g7UoXjAsAe0AHlyVPKW7JahyF3HJmTUR\/wzEraoge8ZPd2lnw1cPuc3OsWby3jhbn3sw600ZG4Pd00xwzAmfO9m4+MaSgCHf06897Mg3Aw==",
+    "certificate": "-----BEGIN CERTIFICATE-----\r\nMIID8TCCAdkCAhAAMA0GCSqGSIb3DQEBCwUAMG0xCzAJBgNVBAYTAlVTMQ8wDQYD\r\nVQQIDAZCb3N0b24xFjAUBgNVBAoMDW93bkNsb3VkIEluYy4xNTAzBgNVBAMMLG93\r\nbkNsb3VkIENvZGUgU2lnbmluZyBJbnRlcm1lZGlhdGUgQXV0aG9yaXR5MB4XDTE2\r\nMDIwMzE3NTE0OVoXDTI2MDEzMTE3NTE0OVowDzENMAsGA1UEAwwEY29yZTCCASIw\r\nDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAPHdSljnHI+ueQd27UyWPO9n4Lqt\r\nbK0kdekiC3si7Mee7uXXJaGuqXJozHEZYB1LIFLdCU\/itCxEk9hyLcyNzeT+nRT\/\r\nzDuOYdbLgCj7\/A5bX+u3jc29UlCYybSFchfMdvn7a0njCna4dE+73b4yEj16tS2h\r\nS1EUygSzgicWlJqMD3Z9Qc+zLEpdhq9oDdDB8HURi2NW4KzIraVncSH+zF1QduOh\r\nnERDnF8x48D3FLdTxGA0W\/Kg4gYsq4NRvU6g3DJNdp4YfqRSFMmLFDCgzDuhan7D\r\nwgRlI9NAeHbnyoUPtrDBUceI7shIbC\/i87xk9ptqV0AyFonkJtK6lWwZjNkCAwEA\r\nATANBgkqhkiG9w0BAQsFAAOCAgEAAMgymqZE1YaHYlRGwvTE7gGDY3gmFOMaxQL4\r\nE5m0CnkBz4BdIPRsQFFdOv3l\/MIWkw5ED3vUB925VpQZYFSiEuv5NbnlPaHZlIMI\r\nn8AV\/sTP5jue3LhtAN4EM63xNBhudAT6wVsvGwOuQOx9Xv+ptO8Po7sTuNYP0CMH\r\nEOQN+\/q8tYlSm2VW+dAlaJ+zVZwZldhVjL+lSH4E9ktWn3PmgNQeKfcnJISUbus6\r\nZtsYDF\/X96\/Z2ZQvMXOKksgvU6XlvIxllcyebC9Bxe\/h0D63GCO2tqN5CWQzIIqn\r\napUynPX8BlLaaExqYGERwlUi\/yOGaUVPUjEPVehviOQYgAqxlrkJk1dWeCrwUori\r\nCXpi+IUYkidfgiJ9F88M3ElpwqIaXp7G3\/4oHBuE2u6M+L+1\/vqPJeTCAWUxxpJE\r\nyYmM+db6D4TySFpQPENNzPS8bpR6T8w2hRumkldC42HrnyJJbpjOieTXhXzjdPvZ\r\nIEP9JGtkhB2du6nBF2MNAq2TqRXpcfQrQEbnQ13aV9bl+roTwwO+SOWK\/wgvdOMI\r\nSTQ0Xk0sTGlmQjPYPkibVceaWMR3sX4cNt5c33YhJys5jxHoAh42km4nN9tfykR5\r\ncrl5lBlKjXh2GP0+omSO3x1jX4+iQPCW2TWoyKkUdLu\/hGHG2w8RrTeme+kATECH\r\nYSu356M=\r\n-----END CERTIFICATE-----"
+}

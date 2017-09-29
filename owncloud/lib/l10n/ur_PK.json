@@ -1,0 +1,18 @@
+{ "translations": {
+    "Unknown filetype" : "غیر معرروف قسم کی فائل",
+    "Invalid image" : "غلط تصویر",
+    "today" : "آج",
+    "yesterday" : "کل",
+    "last month" : "پچھلے مہنیے",
+    "last year" : "پچھلے سال",
+    "seconds ago" : "سیکنڈز پہلے",
+    "Username" : "اسم صارف",
+    "Password" : "پاسورڈ",
+    "Search" : "تلاش",
+    "Apps" : "ایپز",
+    "Help" : "مدد",
+    "Settings" : "ترتیبات",
+    "Users" : "یوزرز",
+    "web services under your control" : "آپ کے اختیار میں ویب سروسیز"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}
