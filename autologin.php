@@ -14,7 +14,7 @@ curl_setopt($ch,CURLOPT_POSTFIELDS,"userid=USERNAME&password=PASSWORD");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
 $data = curl_exec($ch);
 
-header('Location: https://www.redcoolmedia.net/owncloud/login?redirect_url=%252Fowncloud%252Fapps%252Ffiles%252F&username=USERNAME', true,  301);
+header('Location: http://localhost:80/owncloud/login?redirect_url=%252Fowncloud%252Fapps%252Ffiles%252F&username=USERNAME', true,  301);
 
 
 ?>
